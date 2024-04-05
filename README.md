@@ -4,7 +4,8 @@
 This application shows how busy the swimming pools of the IKB in Innsbruck typically are during different times of the day. Unlike the [IKB website](https://www.ikb.at/baeder/auslastung), which only provides information about the current capacity utilization, this tool presents historical data on popular times. This offers visitors valuable information to plan their visits, avoid overcrowding, and ensuring a more enjoyable experience. Popular times are based on average capacity utilization over the last few weeks. Popularity for any given hour is shown relative to the typical peak popularity for the pool for the week. The data for the capacity utilization is collected at regular intervals from the IKB website. Based on the terms of use, scraping the IKB website for personal, non-commercial use is permissible as long as the content is not altered and the source is properly attributed. The scraping involves a small amount of data and requests, which reduces the likelihood of causing disruption or strain on the website's servers.
 
 ## Data Source
-The data about the capacity utilization of the pools is collected from the [IKB website](https://www.ikb.at/baeder/auslastung) (Source: Innsbrucker Kommunalbetriebe AG).
+Source: Innsbrucker Kommunalbetriebe AG
+The data about the capacity utilization of the pools is collected from the [IKB website](https://www.ikb.at/baeder/auslastung).
 
 ## Getting Started
 ### Prerequisites
