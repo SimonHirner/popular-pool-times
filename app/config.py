@@ -1,4 +1,4 @@
-"""Constants of the application."""
+"""Configuration of the application."""
 
 import logging
 

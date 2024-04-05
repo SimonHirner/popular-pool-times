@@ -1,15 +1,13 @@
 """Interface for PostgreSQL database."""
 
-import logging
 import psycopg2
-from constants import DATABASE_URI
-
-logger = logging.getLogger(__name__)
+from app.config import DATABASE_URI
+from app import app
 
 
 def connect_to_database():
     """Connect to database."""
-    logger.info("Connect to database.")
+    app.logger.info("Connect to database.")
 
     conn = psycopg2.connect(database=DATABASE_URI)
     return conn
@@ -17,7 +15,7 @@ def connect_to_database():
 
 def save_to_database(data):
     """Save data to database."""
-    logger.info("Save data to database: f{data}")
+    app.logger.info("Save data to database: f{data}")
 
     conn = connect_to_database()
     cursor = conn.cursor()

@@ -1,21 +1,19 @@
 """Data scraper for IKB website."""
 
-import logging
 import re
 from math import nan
 import requests
 from bs4 import BeautifulSoup
-from constants import (
+from app.config import (
     POOL_UTILIZATION_IDS,
     POOL_UTILIZATION_URL,
 )
-
-logger = logging.getLogger(__name__)
+from app import app
 
 
 def scrape_pool_utilization_data():
     """Scrape pool utilization data."""
-    logger.info("Scrape pool utilization data.")
+    app.logger.info("Scrape pool utilization data.")
 
     response = requests.get(POOL_UTILIZATION_URL, timeout=10)
     response.raise_for_status()
@@ -47,6 +45,6 @@ def scrape_pool_utilization_data():
             }
         )
 
-    logger.debug("Pool utilization data was scraped: f{data}")
+    app.logger.debug("Pool utilization data was scraped: f{data}")
 
     return data
