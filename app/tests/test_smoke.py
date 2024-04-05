@@ -1,5 +1,7 @@
 """Smoke tests for Flask application."""
 
+# pylint: disable=redefined-outer-name
+
 import pytest
 from app import app
 
