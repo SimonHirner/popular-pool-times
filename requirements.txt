@@ -4,3 +4,5 @@ flask
 plotly
 psycopg2
 gunicorn
+pytest
+pylint
