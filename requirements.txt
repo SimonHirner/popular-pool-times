@@ -1,6 +1,8 @@
 requests
 beautifulsoup4
 flask
+flask-sqlalchemy
+flask-migrate
 plotly
 psycopg2
 gunicorn

@@ -15,6 +15,8 @@ The application consits of three main components:
 * Web scraper for collecting the pool capacity utilization data.
 * PostgreSQL database to store the collected data.
 * Flask web application for the visualization of the collected data.
+    * SQLAlchemy library for efficient relational database access
+    * Beautiful Soup library for web scraping
 
 ## Getting Started
 
@@ -22,6 +24,7 @@ The application consits of three main components:
 * Linux Ubuntu
 * Python version 3.10.12
 * pip package installer
+* PostgreSQL database
 
 ### Installation
 
@@ -39,6 +42,10 @@ Install dependencies.
 
 ### Usage
 
+Set environment variable for your local PostgreSQL database.
+
+`export DATABASE_URL="postgresql:///pool_db"`
+
 Run application on a Flask development server.
 
 `flask run`
@@ -54,6 +61,21 @@ Run application on a Gunicorn server.
 ### Linting
 
 `pylint app/.`
+
+## Database Migration
+Database migration is necessary for changing the database schemas without any data loss.
+
+Setting up Flask-Migrate.
+
+`flask db init`
+
+Create migration.
+
+`flask db migrate -m "initial migration"`
+
+Perform an upgrade.
+
+`flask db upgrade`
 
 ## Deployment
 

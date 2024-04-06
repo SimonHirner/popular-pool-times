@@ -1,9 +1,10 @@
 """Configuration of the application."""
 
 import logging
+import os
 
 # Database
-DATABASE_URI = "postgres://user:password@host:port/database_name"
+DATABASE_URL = os.getenv("DATABASE_URL")
 
 # Scraping
 POOL_UTILIZATION_URL = "https://www.ikb.at/baeder/auslastung"

@@ -1,5 +1,6 @@
 """Data scraper for IKB website."""
 
+import datetime
 import re
 from math import nan
 import requests
@@ -27,13 +28,15 @@ def scrape_pool_utilization_data():
 
         match_utilization = re.search(r"\d+(?=\%)", text)
         if match_utilization:
-            utilization = match_utilization.group(0)
+            utilization_string = match_utilization.group(0)
+            utilization = int(utilization_string)
         else:
             utilization = nan
 
-        match_timestamp = re.search(r"\d{2}\.\d{2}\.\d{4}", text)
+        match_timestamp = re.search(r"\d+\.\d+\.\d+\s+\d+:\d+", text)
         if match_timestamp:
-            timestamp = match_timestamp.group(0)
+            timestamp_string = match_timestamp.group(0)
+            timestamp = datetime.datetime.strptime(timestamp_string, "%d.%m.%Y %H:%M")
         else:
             timestamp = nan
 
